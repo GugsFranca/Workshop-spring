@@ -1,5 +1,6 @@
 package com.devsuperior.curso.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.io.Serializable;
@@ -16,6 +17,7 @@ public class User implements Serializable {
     private String phone;
     private String password;
 
+    @JsonIgnore //não precisa, mas no caso serve para bloquear que o user pegue o json de order se colocar la vai ser o inverso
     @OneToMany(mappedBy = "client")
     private static List<Order> orders = new ArrayList<>();
 
