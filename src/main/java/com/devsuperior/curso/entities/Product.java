@@ -15,7 +15,7 @@ public class Product implements Serializable {
     private Long id;
     private String name;
     private String description;
-    private Double prive;
+    private Double price;
     private String imgUrl;
     @ManyToMany
     @JoinTable(name = "tb_product_category", joinColumns = @JoinColumn(name = "product_id"),
@@ -27,11 +27,11 @@ public class Product implements Serializable {
 
     }
 
-    public Product(Long id, String name, String description, Double prive, String imgUrl) {
+    public Product(Long id, String name, String description, Double price, String imgUrl) {
         this.id = id;
         this.name = name;
         this.description = description;
-        this.prive = prive;
+        this.price = price;
         this.imgUrl = imgUrl;
     }
 
@@ -51,12 +51,12 @@ public class Product implements Serializable {
         this.description = description;
     }
 
-    public Double getPrive() {
-        return prive;
+    public Double getPrice() {
+        return price;
     }
 
-    public void setPrive(Double prive) {
-        this.prive = prive;
+    public void setPrice(Double price) {
+        this.price = price;
     }
 
     public String getImgUrl() {
